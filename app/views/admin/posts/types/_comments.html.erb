@@ -18,7 +18,7 @@
         <%= edit_in_place_for [@post, comment], :body, :tag => :p %>
       <% else -%>
         <div class="comment-body">
-        <%= RedCloth.new(comment.body).to_html %>
+        <%= BlueCloth.new(comment.body).to_html %>
         </div>        
       <% end -%>
     <% end -%>

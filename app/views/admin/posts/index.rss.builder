@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
         xml.title post.name
         xml.description case post
         when Snippet then "<pre>#{post.content}</pre>"
-        when Article then RedCloth.new(post.content).to_html
+        when Article then BlueCloth.new(post.content).to_html
         else
           post.content
         end

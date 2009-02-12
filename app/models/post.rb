@@ -67,7 +67,9 @@ class Post < ActiveRecord::Base
   def to_html
     text = case format
     when 'HTML' then content
-    else RedCloth.new(content, [:filter_styles, :no_span_caps]).to_html
+    else BlueCloth.new(content).to_html
+    # else RDiscount.new(content, [:filter_styles, :no_span_caps]).to_html
+    # else BlueCloth.new(content, [:filter_styles, :no_span_caps]).to_html
     end
   end
 

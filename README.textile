@@ -18,7 +18,7 @@ h3. Requirements
 
 You're going to need a few gems to start things off.
 
-  gem install feed-normalizer nokogiri RedCloth
+  gem install feed-normalizer nokogiri BlueCloth
 
 If you want to run the test suite, you'll need the Fixjour, faker, and mocha gems.
 
