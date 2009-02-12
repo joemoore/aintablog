@@ -2,7 +2,7 @@
 module ApplicationHelper
   # Extracted a method here to open the door to custom formatters.
   def markup_for(str)
-    RedCloth.new(str).to_html
+    BlueCloth.new(str).to_html
   end
   
   def spanned_link(*args)

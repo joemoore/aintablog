@@ -71,7 +71,7 @@ really a problem?
     assert_equal 1, h.search('h1').size
     assert_equal 2, h.search('p').size
 
-    assert post = create_article(:content => content, :format => 'RedCloth')
+    assert post = create_article(:content => content, :format => 'BlueCloth')
     assert h = Hpricot.parse(post.to_html)
     assert_equal 1, h.search('h1').size
     assert_equal 2, h.search('p').size

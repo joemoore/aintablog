@@ -17,6 +17,6 @@ class Comment < ActiveRecord::Base
 
   def texilized_body
     text = body || ''
-    RedCloth.new(text).to_html
+    BlueCloth.new(text).to_html
   end
 end
