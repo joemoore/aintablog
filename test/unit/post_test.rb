@@ -58,11 +58,11 @@ really a problem?
     assert_equal 0, h.search('br').size # when we try to redclothify html, this fails.
   end
 
-  def test_format_redcloth
+  def test_format_bluecloth
     content = <<-EOF
-h1. redcloth
+# BlueCloth
 
-this is a redcloth document.
+this is a bluecloth document.
 
 really a problem?
     EOF

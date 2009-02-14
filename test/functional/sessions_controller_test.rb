@@ -66,7 +66,7 @@ class SessionsControllerTest < ActionController::TestCase
   def test_should_delete_token_on_logout
     login_as :quentin
     get :destroy
-    assert ! @response.cookies["auth_token"]
+    assert @response.cookies["auth_token"].empty?
   end
 
   def test_should_login_with_cookie
