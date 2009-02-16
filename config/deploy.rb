@@ -4,7 +4,7 @@ set :application, "40withegg"
 
 default_run_options[:pty] = true
 set :repository,  "."
-#set :user, "josephm"
+set :user, "josephm"
 set :branch, "master"
 set :deploy_via, :copy
 
