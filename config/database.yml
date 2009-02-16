@@ -21,5 +21,5 @@ production:
     database: josephm_40prod
     username: jospehm_root
     password: password
-    host: localhost
+    host: 64.22.96.76
     socket: /tmp/mysql.sock
