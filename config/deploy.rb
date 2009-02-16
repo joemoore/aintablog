@@ -19,11 +19,18 @@ set :scm, :git
 
 role :app, "64.22.96.76"
 role :web, "64.22.96.76"
-# role :db,  "", :primary => true
+role :db,  "64.22.96.76", :primary => true
 
 namespace :cache do
   desc "Remove cache directory, essentially expiring the whole thing"
   task :expire do
     run "rm -rf #{current_path}/public/cache"
+  end
+end
+
+namespace :deploy do 
+  
+  task :restart do
+    run "kill -9 `ps -ef |grep josephm |grep fcgi |grep -v grep |awk '{print $2}'`"
   end
 end

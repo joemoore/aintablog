@@ -30,7 +30,7 @@ namespace :deploy do
     logger.info "done!"
   end
   
-  after "deploy:update_code", "deploy:copy_config_files"
+  # after "deploy:update_code", "deploy:copy_config_files"
   desc "Copy production database.yml to live app"
   task :copy_config_files do
     config_files.each do |file|
