@@ -8,6 +8,9 @@ set :user, "josephm"
 set :branch, "master"
 set :deploy_via, :copy
 
+set :keep_releases,       5
+
+
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
