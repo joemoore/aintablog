@@ -19,6 +19,10 @@ set :scm, :git
 
 
 task :production do
+  
+  set :dbuser,        "josephm_root"
+  set :dbpass,        "password"
+  
   set :production_database, "josephm_40prod"
   set :production_dbhost,   "localhost"
 
