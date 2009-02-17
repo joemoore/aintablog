@@ -55,3 +55,7 @@ namespace :deploy do
     run "kill -9 `ps -ef |grep josephm |grep fcgi |grep -v grep |awk '{print $2}'`"
   end
 end
+
+after 'deploy', 'deploy:cleanup'
+after "deploy:migrations", "deploy:cleanup"
+
