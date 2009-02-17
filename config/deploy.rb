@@ -17,9 +17,23 @@ set :deploy_to, "/home/josephm/#{application}"
 # your SCM below:
 set :scm, :git
 
-role :app, "64.22.96.76"
-role :web, "64.22.96.76"
-role :db,  "64.22.96.76", :primary => true
+
+task :production do
+  set :production_database, "josephm_40prod"
+  set :production_dbhost,   "localhost"
+
+  # comment out if it gives you trouble. newest net/ssh needs this set.
+  ssh_options[:paranoid] = false
+
+  role :app, "64.22.96.76"
+  role :web, "64.22.96.76"
+  role :db,  "64.22.96.76", :primary => true
+
+  set :rails_env, "production"
+  set :environment_database, defer { production_database }
+  set :environment_dbhost, defer { production_dbhost }
+end
+
 
 namespace :cache do
   desc "Remove cache directory, essentially expiring the whole thing"
