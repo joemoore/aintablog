@@ -8,3 +8,13 @@ namespace :migrate do
     end
   end
 end
+
+namespace :db do
+  namespace :migrate do
+    desc "migrate posts and comments from mephisto to aintablog.  See lib/migrate_from_mephisto.rb for details."
+    task :from_mephisto => :environment do
+      require 'migrate_from_mephisto'
+      MigrateFromMephisto.run
+    end
+  end
+end
