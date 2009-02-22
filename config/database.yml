@@ -1,9 +1,18 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development: &development
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: mysql
+  database: aintablog_dev
+  username: root
+  password: password
+  host: localhost
+  socket: /tmp/mysql.sock
   timeout: 5000
+  
+  # development: &development
+  # adapter: sqlite3
+  # database: db/development.sqlite3
+  # timeout: 5000
 
 dev_cached:
   <<-development
@@ -18,8 +27,8 @@ test:
 
 production:
     adapter: mysql
-    database: josephm_40prod
-    username: josephm_root
-    password: password
-    host: localhost
-    socket: /tmp/mysql.sock
+    database: josephm_aintprod
+    username: josephm_blog
+    password: 8106
+    # host: localhost
+    # socket: /tmp/mysql.sock

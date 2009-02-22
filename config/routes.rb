@@ -31,5 +31,12 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   
+  # mephisto migration
+  map.mephisto_post_day '/:year/:month/:day/:id', :controller => 'posts', :action => "show"
+  map.mephisto_month '/:year/:month/:id', :controller => 'posts', :action => "show"
+  map.mephisto_feed 'feed', :controller => "posts", :format => 'rss'
+  map.mephisto_feed_format 'feed.:format', :controller => "posts"
+  map.mephisto_atom_xml 'feed/atom.xml', :controller => "posts", :format => 'rss'
+  
   map.root :controller => 'posts'
 end

@@ -1,7 +1,7 @@
 development: &dev
-  site_title: "40withegg: a tasty, filling meal for your mind."
+  site_title: "40withegg: a tasty, filling meal for your mind"
   site_name: "40withegg"
-  site_tagline: "a tasty, filling meal for your mind."
+  site_tagline: "a tasty, filling meal for your mind"
   user_email: "test@example.com"
   import_twitter_replies: false
   use_defensio: false
@@ -28,10 +28,10 @@ test:
     snippets: # http://feeds.feedburner.com/your-feed-snippets
 
 production:
-  site_title: "40withegg: a tasty, filling meal for your mind."
+  site_title: "40withegg: a tasty, filling meal for your mind"
   site_name: "40withegg"
-  site_tagline: "a tasty, filling meal for your mind."
-  user_email: "test@example.com"
+  site_tagline: "a tasty, filling meal for your mind"
+  user_email: "joe.moore@gmail.com"
   import_twitter_replies: true
   use_defensio: true
   feedburner:

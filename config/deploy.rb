@@ -1,6 +1,6 @@
 set :use_sudo, false
 
-set :application, "40withegg"
+set :application, "aintablog"
 
 default_run_options[:pty] = true
 set :repository,  "."
@@ -23,18 +23,17 @@ set :scm, :git
 
 task :production do
   
-  set :dbuser,        "josephm_root"
-  set :dbpass,        "password"
+  set :dbuser,        "josephm_blog"
+  set :dbpass,        "8106"
   
-  set :production_database, "josephm_40prod"
-  set :production_dbhost,   "localhost"
+  set :production_database, "josephm_aintprod"
 
   # comment out if it gives you trouble. newest net/ssh needs this set.
   ssh_options[:paranoid] = false
 
-  role :app, "64.22.96.76"
-  role :web, "64.22.96.76"
-  role :db,  "64.22.96.76", :primary => true
+  role :app, "40withegg.com"
+  role :web, "40withegg.com"
+  role :db,  "40withegg.com", :primary => true
 
   set :rails_env, "production"
   set :environment_database, defer { production_database }
@@ -52,10 +51,14 @@ end
 namespace :deploy do 
   
   task :restart do
-    run "kill -9 `ps -ef |grep josephm |grep fcgi |grep -v grep |awk '{print $2}'`"
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+  
+  task :symlink_assets do 
+    run "ln -s #{shared_path}/public/assets #{current_path}/public/assets"
   end
 end
 
 after 'deploy', 'deploy:cleanup'
 after "deploy:migrations", "deploy:cleanup"
-
+after 'deploy:symlink', 'deploy:symlink_assets'

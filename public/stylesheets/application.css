@@ -8,6 +8,7 @@
 }
 
 body {
+	background:#fff url(../images/sunny_side_700_525_2.jpg) top right no-repeat scroll;
   text-align: center;
   font-family: Lucida Grande, Arial, Tahoma, sans-serif;
   font-size: 16px;
