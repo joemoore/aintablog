@@ -5,7 +5,7 @@ set :application, "aintablog"
 default_run_options[:pty] = true
 set :repository,  "."
 set :user, "josephm"
-set :branch, "master"
+set :branch, "40withegg"
 set :deploy_via, :copy
 
 set :keep_releases,       5
