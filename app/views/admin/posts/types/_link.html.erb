@@ -1,7 +1,4 @@
-<div class="date">
-  <span class="month"><%= post.created_at.strftime('%b') -%></span>
-  <span class="day"><%= post.created_at.strftime('%e') -%></span>
-</div>
+<%= render :partial => 'posts/date', :locals => {:post => post}%>
 
 <div class="entry">
   <%= spanned_link h(post.link_text), post.permalink -%>
