@@ -22,25 +22,31 @@
     <orderEntry type="library" name="[gem] activesupport (v2.2.2, /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2)" level="application" />
     <orderEntry type="library" name="[gem] rails (v2.2.2, /opt/local/lib/ruby/gems/1.8/gems/rails-2.2.2)" level="application" />
     <orderEntry type="library" name="[gem] actionpack (v2.2.2, /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2)" level="application" />
+    <orderEntry type="library" name="[gem] nokogiri (v1.1.1, /opt/local/lib/ruby/gems/1.8/gems/nokogiri-1.1.1)" level="application" />
+    <orderEntry type="library" name="[gem] rubyforge (v1.0.2, /opt/local/lib/ruby/gems/1.8/gems/rubyforge-1.0.2)" level="application" />
+    <orderEntry type="library" name="[gem] feed-normalizer (v1.5.1, /opt/local/lib/ruby/gems/1.8/gems/feed-normalizer-1.5.1)" level="application" />
+    <orderEntry type="library" name="[gem] hpricot (v0.6.161, /opt/local/lib/ruby/gems/1.8/gems/hpricot-0.6.161)" level="application" />
+    <orderEntry type="library" name="[gem] hoe (v1.7.0, /opt/local/lib/ruby/gems/1.8/gems/hoe-1.7.0)" level="application" />
+    <orderEntry type="library" name="[gem] simple-rss (v1.1, /opt/local/lib/ruby/gems/1.8/gems/simple-rss-1.1)" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="0" />
   </component>
   <component name="RailsViewFoldersManager">
     <USER_URLS url="file://$MODULE_DIR$/public/javascripts" />
-    file://$MODULE_DIR$/public/javascripts
+    file:///Users/jlm/dev/40withegg/public/javascripts
     <USER_URLS url="file://$MODULE_DIR$/public/stylesheets" />
-    file://$MODULE_DIR$/public/stylesheets
+    file:///Users/jlm/dev/40withegg/public/stylesheets
     <USER_URLS url="file://$MODULE_DIR$/lib" />
-    file://$MODULE_DIR$/lib
+    file:///Users/jlm/dev/40withegg/lib
     <USER_URLS url="file://$MODULE_DIR$/config" />
-    file://$MODULE_DIR$/config
+    file:///Users/jlm/dev/40withegg/config
     <USER_URLS url="file://$MODULE_DIR$/spec" />
-    file://$MODULE_DIR$/spec
+    file:///Users/jlm/dev/40withegg/spec
     <USER_URLS url="file://$MODULE_DIR$/vendor/rails" />
-    file://$MODULE_DIR$/vendor/rails
+    file:///Users/jlm/dev/40withegg/vendor/rails
     <USER_URLS url="file://$MODULE_DIR$/vendor/plugins" />
-    file://$MODULE_DIR$/vendor/plugins
+    file:///Users/jlm/dev/40withegg/vendor/plugins
   </component>
 </module>
 
