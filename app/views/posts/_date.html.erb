@@ -1,0 +1,7 @@
+<div class="date">
+  <span class="month"><%= post.created_at.strftime('%b') %></span>
+  <span class="day"><%= post.created_at.strftime('%e') %></span>
+  <% if post.created_at.year != Time.now.year %>
+    <span class="year">&lsquo;<%= post.created_at.strftime('%y') %></span>
+  <% end %>
+</div>

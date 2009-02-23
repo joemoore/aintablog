@@ -10,15 +10,12 @@ Fixjour :verify => true do
   end
   
   define_builder(Post) do |klass, overrides|
-    klass.new \
-      :feed => new_feed,
-      :header => Faker::Lorem.sentence,
-      :content => 'Some content'
+    klass.new :feed => new_feed, :header => Faker::Lorem.sentence, :content => 'Some content', :type => "Post"
   end
   
   define_builder(Article) do |klass, overrides|
     klass.protected :feed, :user
-    klass.new :header => 'A name', :content => 'Some content', :feed => new_feed
+    klass.new :header => 'A name', :content => 'Some content', :feed => new_feed, :type => "Article"
   end
   
   define_builder(Feed) do |klass, overrides|

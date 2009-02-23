@@ -1,9 +1,6 @@
 <h3 class="entry-title"><%= spanned_link post.header, post.link %></h3>
 
-<div class="date">
-  <span class="month"><%= post.created_at.strftime('%b') %></span>
-  <span class="day"><%= post.created_at.strftime('%e') %></span>
-</div>
+<%= render :partial => 'posts/date', :locals => {:post => post}%>
 
 <div class="entry entry-content">
 <% cache(post.permalink) do -%>
