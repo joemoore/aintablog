@@ -6,6 +6,7 @@ db/*.sqlite3
 ./**/.DS_Store
 Capfile
 *.tmproj
+.idea/*
 public/cache
 public/cache/**
 public/javascripts/all.js
