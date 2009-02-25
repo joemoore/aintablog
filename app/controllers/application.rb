@@ -3,7 +3,8 @@
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
-  protect_from_forgery :secret => 'dd49bc1096180f8639bde09ce072c108'
+  protect_from_forgery :secret => 'dd49bc1096180f8639bde09ce072c108', :only => [:update, :delete, :create]
+  
   # protect_from_forgery
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   
