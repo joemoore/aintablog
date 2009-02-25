@@ -1,3 +1,13 @@
 #!/usr/bin/env ruby
 runner = File.dirname(__FILE__) + "/runner"
-system "RAILS_ENV=production #{runner} 'Feed.refresh_all!'"
+
+begin
+    if system("RAILS_ENV=production #{runner} 'Feed.refresh_all!'")
+        puts "#{Time.now} - OK!"
+    else
+        puts "#{Time.now} - ERROR!"
+    end
+rescue => e
+    puts "error!"
+    puts e
+end
