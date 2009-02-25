@@ -27,6 +27,14 @@ class FlickrTest < ActiveSupport::TestCase
       flickr.refresh!
     end
   end
+  
+  def test_should_map_pictures_to_flickrs 
+    create_flickr.refresh!
+    pic = Picture.find_by_header('Protester Parade')
+    assert pic.content.include?('posted a photo')
+    assert pic.header.include?('posted a photo')
+    
+  end
 
 protected
 
