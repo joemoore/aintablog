@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
   config.action_controller.session_store = :cookie_store
   config.action_controller.session = {
     :session_key => "_myapp_session",
-    :secret => (s = ""; 31.times { s << rand(10).to_s }; s)
+    :secret      => '98b0d895002199cb583775282101af83d144d9c710a83502497e3ebc79364c79147cf8452d3ffc95d7752e74b8864970b2bf265754e30fee103b7b9d188c4dbe'
   }
 
   # These gems are totally required
