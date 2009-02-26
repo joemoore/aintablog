@@ -32,8 +32,6 @@ class FlickrTest < ActiveSupport::TestCase
     create_flickr.refresh!
     pic = Picture.find_by_header('Protester Parade')
     assert pic.content.include?('posted a photo')
-    assert pic.header.include?('posted a photo')
-    
   end
 
 protected
