@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=674">
 	<%= stylesheet_link_tag 'application', 'article', 'comments', 'admin', :cache => 'all' %>
 	<%= javascript_include_tag 'prototype', 'effects', 'extensions', 'application', 'admin', :cache => 'all' %>
-	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+	<%#= javascript_tag "window._token = '#{form_authenticity_token}'" %>
 	<%= feed_tag nil, :title => "All Posts (RSS)" %>
 	<%= feed_tag :articles %>
 	<%= feed_tag :snippets %>

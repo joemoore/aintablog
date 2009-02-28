@@ -28,6 +28,9 @@
     <orderEntry type="library" name="[gem] hpricot (v0.6.161, /opt/local/lib/ruby/gems/1.8/gems/hpricot-0.6.161)" level="application" />
     <orderEntry type="library" name="[gem] hoe (v1.7.0, /opt/local/lib/ruby/gems/1.8/gems/hoe-1.7.0)" level="application" />
     <orderEntry type="library" name="[gem] simple-rss (v1.1, /opt/local/lib/ruby/gems/1.8/gems/simple-rss-1.1)" level="application" />
+    <orderEntry type="library" name="[gem] echoe (v3.1, /opt/local/lib/ruby/gems/1.8/gems/echoe-3.1)" level="application" />
+    <orderEntry type="library" name="[gem] highline (v1.4.0, /opt/local/lib/ruby/gems/1.8/gems/highline-1.4.0)" level="application" />
+    <orderEntry type="library" name="[gem] RedCloth (v4.1.1, /opt/local/lib/ruby/gems/1.8/gems/RedCloth-4.1.1)" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="0" />
