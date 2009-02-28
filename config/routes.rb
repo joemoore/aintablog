@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :articles, :has_many => :comments
   map.resources :quotes
   map.resources :pictures
+  map.resources :gists
   map.resources :tweets
   map.resources :links
   map.resources :snippets, :has_many => :comments

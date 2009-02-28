@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
   
   def post_repo
     begin
-      @post_type = post_type.to_s.tableize
-      @post_type.classify.constantize
+      @post_type  ||= post_type.to_s
+      @post_type.to_s.singularize.classify.constantize
     rescue => e
       logger.info(e)
       @post_type = :posts
