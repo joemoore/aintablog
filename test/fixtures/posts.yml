@@ -33,7 +33,7 @@ imported_article:
   header: This one is imported
   content: Nuff _Said_?
   cite: None
-  type: Article
+  type: ExternalArticle
   format: HTML
 
 snippet:
