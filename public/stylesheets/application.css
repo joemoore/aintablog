@@ -282,10 +282,14 @@ input[type="submit"] {
 }
 
 .external-article:before {
-  content: ' ';
+  content: 'Rebloggd!';
   display: block;
   float: left;
   margin-right: 1em;
+  padding-left: 37px;
+  font-style: italic;
+  vertical-align:middle;
+  padding-top: 0.5em;
   width: 36px;
   height: 36px;
   background: url(/images/external_article.png) no-repeat;
