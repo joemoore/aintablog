@@ -26,6 +26,34 @@ ActiveRecord::Schema.define(:version => 20090208061237) do
     t.string   "signature"
   end
 
+  create_table "contents", :force => true do |t|
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "excerpt"
+    t.text     "body"
+    t.text     "excerpt_html"
+    t.text     "body_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "published_at"
+    t.string   "type",           :limit => 20
+    t.string   "author",         :limit => 100
+    t.string   "author_url"
+    t.string   "author_email"
+    t.string   "author_ip",      :limit => 100
+    t.integer  "comments_count",                :default => 0
+    t.integer  "updater_id"
+    t.integer  "version"
+    t.integer  "site_id"
+    t.boolean  "approved",                      :default => false
+    t.integer  "comment_age",                   :default => 0
+    t.string   "filter"
+    t.string   "user_agent"
+    t.string   "referrer"
+  end
+
   create_table "feeds", :force => true do |t|
     t.datetime "last_updated_at"
     t.string   "title"

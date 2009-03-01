@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource  :session
   map.resources :articles, :has_many => :comments
+  map.resources :external_articles
   map.resources :quotes
   map.resources :pictures
   map.resources :gists

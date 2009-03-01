@@ -122,8 +122,8 @@ class CachingIntegrationTest < ActionController::IntegrationTest
   
   def test_should_expire_home_page_on_single_feed_refresh
     feed = feeds(:blog)
-    get_paths '/', '/posts/page/1', '/articles', '/articles/page/1', '/posts.rss', '/articles.rss'
-    assert_cache_expired('index.html', 'posts/', 'articles/', 'articles.html', 'posts.rss', 'articles.rss') do
+    get_paths '/', '/posts/page/1', '/external_articles', '/external_articles/page/1', '/posts.rss', '/external_articles.rss'
+    assert_cache_expired('index.html', 'posts/', 'external_articles/', 'external_articles.html', 'posts.rss', 'external_articles.rss') do
       login_as :quentin
       put feed_path(feed, :refresh => true)
     end

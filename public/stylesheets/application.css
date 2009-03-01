@@ -8,7 +8,7 @@
 }
 
 body {
-	background:#fff url(../images/sunny_side_700_525_2.jpg) top right no-repeat scroll;
+  background: #fff url(../images/sunny_side_700_525_2.jpg) top right no-repeat scroll;
   text-align: center;
   font-family: Lucida Grande, Arial, Tahoma, sans-serif;
   font-size: 16px;
@@ -16,8 +16,13 @@ body {
   padding-bottom: 20px;
 }
 
-.left { float: left; }
-.right { float: right; }
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
 
 .flash {
   width: 99%;
@@ -246,7 +251,7 @@ input[type="submit"] {
 
 /*------------------------------------------------------------
   Article styles */
-  
+
 .article {
   padding: 1em 0;
 }
@@ -260,7 +265,7 @@ input[type="submit"] {
   margin-top: 0.3em;
 }
 
-.article cite {
+.article cite, .external_article cite {
   display: block;
   text-align: right;
   font-style: normal;
@@ -268,8 +273,27 @@ input[type="submit"] {
 }
 
 /*------------------------------------------------------------
-  Snippet styles */
-  
+  External Article styles */
+
+.external-article .icon {
+  display:inline;
+  float:left;
+  margin-right: 1em;
+}
+
+.external-article:before {
+  content: ' ';
+  display: block;
+  float: left;
+  margin-right: 1em;
+  width: 36px;
+  height: 36px;
+  background: url(/images/external_article.png) no-repeat;
+}
+
+/*------------------------------------------------------------
+Snippet styles */
+
 .snippet {
   padding: 1em 0;
 }
@@ -529,9 +553,8 @@ input[type="submit"] {
   height: 100px;
 }
 
-
 /*------------------------------------------------------------
-  Gist styles */
+Gist styles */
 
 .gist {
   padding: 1.4em 0;

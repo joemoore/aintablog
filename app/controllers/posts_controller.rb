@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   # Used by feeds_controller to calculate cache expirations.
-  @@subtypes = [:articles, :links, :pictures, :quotes, :snippets, :tweets, :gists]
+  @@subtypes = [:articles, :external_articles, :links, :pictures, :quotes, :snippets, :tweets, :gists]
   cattr_reader :subtypes 
   
   before_filter :redirect_to_admin, :if => :logged_in?
