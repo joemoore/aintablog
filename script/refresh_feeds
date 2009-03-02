@@ -3,6 +3,9 @@ runner = File.dirname(__FILE__) + "/runner"
 
 begin
     if system("RAILS_ENV=production #{runner} 'Feed.refresh_all!'")
+        %w(index post feed article external_article gist link picture quote snippet tweet).each do |file|
+          system "rm #{file}.html #{file}s.html #{file}.rss #{file}s.rss"  
+        end
         puts "#{Time.now} - OK!"
     else
         puts "#{Time.now} - ERROR!"
