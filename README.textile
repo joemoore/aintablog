@@ -1,3 +1,24 @@
+Big changes I've made: 
+* Added Mephisto migration support and tools
+* posts and comments use BlueCloth (markdown) rather than RedCloth (textile)
+* Posts with dates not from this year get a year indicator in the UI
+
+h4. Flickr:
+
+* Description from Flickr is added as content, displayed in a blockquote
+* All links go to the Flickr page for that photo, not the Flickr farm
+* title links to Flickr
+
+h4. ExternalArticle: 
+* Blogs create ExternalArticle objects, not Articles.  Articles are reserved for things one actually writes yourself
+* UI: ExternalArticles have a special icon
+* Templates for ExternalArticles all around
+
+h4. Tweets: 
+* First 4 words of a Tweet become that Tweet's header
+
+
+
 h1. AintaBlog: Open Source Tumblogging
 
 h3. "aintablog.com":http://aintablog.com
