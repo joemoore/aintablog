@@ -32,6 +32,7 @@ class TwitterTest < ActiveSupport::TestCase
     twitter = create_twitter :uri => "file://#{MOCK_ROOT}/twitter_feed.xml"
     twitter.refresh!
     tweet = Tweet.last
+    assert tweet.header.starts_with?("Tweet: ")
     assert tweet.header.include?(tweet.content[0..10])
     length = tweet.content.length
     assert ! tweet.header.include?(tweet.content[length - 10, length])

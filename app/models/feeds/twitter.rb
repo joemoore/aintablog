@@ -5,7 +5,7 @@ class Twitter < Feed
     tweet.content = content
     words = content.split(' ')
     header = words[0..5].join(' ')
-    tweet.header = header
+    tweet.header = 'Tweet: ' + header
     tweet.header << ' ...' unless header.ends_with?('.')
     tweet.permalink = entry.urls.first
     tweet.created_at = entry.try(:date_published)
