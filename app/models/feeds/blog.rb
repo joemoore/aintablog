@@ -1,6 +1,6 @@
 class Blog < Feed
   
-  entries_become :articles do |article, entry|
+  entries_become :external_articles do |article, entry|
     article.header = entry.title
     article.content = entry.content
     article.permalink  = entry.urls.first

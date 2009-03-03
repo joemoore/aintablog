@@ -14,7 +14,7 @@ class BlogTest < ActiveSupport::TestCase
   end
   
   def test_should_create_articles
-    assert_difference 'Article.count', 9 do
+    assert_difference 'ExternalArticle.count', 9 do
       create_blog.refresh!
     end
   end
@@ -22,7 +22,7 @@ class BlogTest < ActiveSupport::TestCase
   def test_should_not_create_posts_twice
     blog = create_blog
     blog.refresh!
-    assert_no_difference 'Article.count' do
+    assert_no_difference 'ExternalArticle.count' do
       blog.refresh!
     end
   end

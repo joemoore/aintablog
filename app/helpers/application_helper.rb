@@ -24,7 +24,7 @@ module ApplicationHelper
   end
   
   def partial_for(post)
-    partial_path = logged_in? ? "/admin/posts/types/#{post.type.downcase}.html.erb" : "/posts/types/#{post.type.downcase}.html.erb"
+    partial_path = logged_in? ? "/admin/posts/types/#{post.type.underscore}.html.erb" : "/posts/types/#{post.type.underscore}.html.erb"
     render :partial => partial_path, :locals => { :post => post }
   end
   
