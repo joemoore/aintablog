@@ -1,7 +1,9 @@
+<h3 class="entry-title"><%= spanned_link post.header, post.cite %></h3>
+
 <%= render :partial => 'posts/date', :locals => {:post => post}%>
 
-<%= image_tag post.permalink %>
+<%= link_to image_tag(post.permalink), post.cite %>
 <small><%= post.header %></small>
 <cite>
   &#x2010; Posted from <%= link_to 'flickr', post.cite %> 
-</cite>
+</cite>`
