@@ -4,6 +4,12 @@
 
 <%= link_to image_tag(post.permalink), post.cite %>
 <small><%= post.header %></small>
+
+<div class="entry entry-content">
+<% cache(post.permalink) do -%>
+  <blockquote><%= clean_content_for(post) if post.content %></blockquote>
+<% end -%>
+</div>
 <cite>
   &#x2010; Posted from <%= link_to 'flickr', post.cite %> 
-</cite>`
+</cite>

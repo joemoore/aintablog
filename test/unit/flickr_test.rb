@@ -31,12 +31,11 @@ class FlickrTest < ActiveSupport::TestCase
   def test_should_map_pictures_to_flickrs 
     create_flickr.refresh!
     pic = Picture.find_by_header('Protester Parade')
-    assert pic.content.include?('posted a photo')
-    assert pic.header.include?('posted a photo')
-    
+    assert pic.content.include?('I decided to not bring')
+    assert ! pic.content.include?('img')
   end
-
-protected
+  
+  protected
 
   def create_flickr(options={})
     Flickr.create({ :uri => "file://#{MOCK_ROOT}/flickr_feed.xml" }.merge(options))

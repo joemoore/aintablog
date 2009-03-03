@@ -570,3 +570,12 @@ input[type="submit"] {
 .gist .date {
   margin-top: 0;
 }
+
+.entry blockquote, .entry blockquote p {
+  font-size: 12px;
+}
+
+.entry blockquote {
+  padding: 0 1em;
+  border-left: 1em solid #efefef;
+}

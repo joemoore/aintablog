@@ -85,6 +85,8 @@ module ApplicationHelper
     case post
     when Tweet, Link
       post.permalink
+    when Picture
+      post.cite
     else
       post.from_feed? ? post.permalink : "http://#{host_helper}#{url_for(post)}"
     end
