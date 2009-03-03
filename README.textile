@@ -10,14 +10,16 @@ h4. Flickr:
 * title links to Flickr
 
 h4. ExternalArticle: 
+
 * Blogs create ExternalArticle objects, not Articles.  Articles are reserved for things one actually writes yourself
 * UI: ExternalArticles have a special icon
 * Templates for ExternalArticles all around
 
 h4. Tweets: 
+
 * First 4 words of a Tweet become that Tweet's header
 
-
+----------------------------------------
 
 h1. AintaBlog: Open Source Tumblogging
 
