@@ -4,7 +4,7 @@ class Twitter < Feed
     content = entry.content.gsub(/\A\w*:?\s/, '')
     tweet.content = content
     words = content.split(' ')
-    header = words[0..5].join(' ')
+    header = words[0..4].join(' ')
     tweet.header = 'Tweet: ' + header
     tweet.header << ' ...' unless header.ends_with?('.')
     tweet.permalink = entry.urls.first
