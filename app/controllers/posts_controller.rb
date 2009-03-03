@@ -12,9 +12,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
+    last_modified = post_repo.last_modified
+
     if fresh_when \
       :etag => (post_repo.etag || 'empty'),
-      :last_modified => post_repo.last_modified.utc
+      :last_modified => last_modified ? last_modified.utc : nil
       return
     end
     

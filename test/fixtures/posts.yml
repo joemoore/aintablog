@@ -45,3 +45,29 @@ snippet:
   lang: Javascript
   type: Snippet
   user: quentin
+
+tweet:
+  permalink: tweet_1
+  content: now you know more about me
+  type: Tweet
+  user: quentin
+
+gist:
+  permalink: gist_1
+  content: foo.map(&:bar)
+  type: Gist
+  user: quentin
+
+quote:
+  permalink: quote_1
+  content: that was rad dude
+  type: Quote
+  user: quentin
+
+pic:
+  permalink: pic1
+  header: cute cats
+  cite: url_to_flickr
+  content: check out the photo
+  type: Picture
+  user: quentin
