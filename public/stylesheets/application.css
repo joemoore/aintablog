@@ -191,7 +191,7 @@ input[type="submit"] {
   text-shadow: 1px 1px 1px #c0c0c0;
 }
 
-.date .month {
+.date .month, .date .year {
   display: block;
 }
 

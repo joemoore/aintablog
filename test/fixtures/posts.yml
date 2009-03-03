@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   permalink: my-string
   header: A short article
   content: My _Italic_ Text
@@ -10,6 +11,7 @@ one:
   comment_counter: 1
 
 two:
+  id: 2
   permalink: http://daringfireball.net/2008/06/new_linked_list_permalinks
   header: A link to df
   content: MyText
@@ -18,7 +20,8 @@ two:
   user: quentin
   lang: MyString
   comment_counter: 1
-  
+
+
 article:
   permalink: something-good
   header: It really is

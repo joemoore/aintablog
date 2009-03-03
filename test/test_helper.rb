@@ -4,6 +4,7 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'mocha'
 require 'fixjour'
+require 'factory_girl'
 require File.join(File.dirname(__FILE__), *%w[builders])
 begin
   require 'redgreen'
