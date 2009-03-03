@@ -59,5 +59,6 @@
   padding: 1em 0;
   font-family: Monaco, Courier, monospace;
   line-height: 1.3em;
+  overflow-x: auto;
 }
 
