@@ -1,8 +1,8 @@
 # Sets up the Rails environment for Cucumber
 MOCK_ROOT = File.dirname(__FILE__) + '/../../test/mocks' unless defined?(MOCK_ROOT)
 # require 'thoughtbot-factory_girl'
-require 'test/test_helper'
-require 'test/factories'
+#require 'test/test_helper'
+require 'factory_girl'
 
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
