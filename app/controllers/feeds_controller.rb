@@ -94,8 +94,7 @@ class FeedsController < ApplicationController
   
   def refresh
     flash[:notice] = 'Your feeds have been refreshed.'
-    @feeds = Feed.find(:all)
-    @feeds.each(&:refresh!)
+    Feed.refresh_all!
     respond_to do |format|
       format.html { redirect_to(feeds_url) }
       format.xml  { head :ok }

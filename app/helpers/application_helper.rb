@@ -44,7 +44,7 @@ module ApplicationHelper
   def clean_content_for(post)
     text = post.to_html
     doc = Nokogiri::HTML(text)
-    doc.search("script","noscript","object","embed","style","frameset","frame","iframe").unlink if post.from_feed?
+    doc.search("script","noscript","object","style","frameset","frame","iframe").unlink if post.from_feed?
     spanify_links(doc)
     text = doc.at("body").inner_html
   end
