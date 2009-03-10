@@ -1,5 +1,3 @@
 class LinksController < PostsController
-  def post_type
-    :links
-  end
+  for_type :links
 end

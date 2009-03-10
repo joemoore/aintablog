@@ -1,5 +1,3 @@
 class GistsController < PostsController
-  def post_type
-    :gists
-  end
+  for_type :gists
 end

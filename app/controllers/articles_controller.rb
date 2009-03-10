@@ -1,5 +1,3 @@
 class ArticlesController < PostsController
-  def post_type
-    :articles
-  end
+  for_type :articles
 end

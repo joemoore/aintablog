@@ -1,5 +1,3 @@
 class TweetsController < PostsController
-  def post_type
-    :tweets
-  end
+  for_type :tweets
 end

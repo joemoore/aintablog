@@ -1,5 +1,3 @@
 class SnippetsController < PostsController
-  def post_type
-    :snippets
-  end
+  for_type :snippets
 end

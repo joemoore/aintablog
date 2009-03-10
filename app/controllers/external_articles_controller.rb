@@ -1,5 +1,3 @@
 class ExternalArticlesController < PostsController
-  def post_type
-    :external_articles
-  end
+  for_type :pictures
 end

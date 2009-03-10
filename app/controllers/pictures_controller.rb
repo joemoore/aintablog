@@ -1,5 +1,3 @@
 class PicturesController < PostsController
-  def post_type
-    :pictures
-  end
+  for_type :pictures
 end
