@@ -76,4 +76,17 @@ really a problem?
     assert_equal 1, h.search('h1').size
     assert_equal 2, h.search('p').size
   end
+
+  def test_generate_header
+    post = new_post(:header => nil, :content => 'one two three four five six seven eight nine ten')
+    post.generate_header
+    assert_equal 'one two three four five...', post.header
+    post.content = 'one two'
+    post.header = nil
+    post.generate_header
+    assert_equal 'one two', post.header
+    post.header = 'do not overwrite'
+    post.generate_header
+    assert_equal 'do not overwrite', post.header
+  end
 end

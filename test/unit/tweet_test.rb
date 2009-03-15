@@ -22,10 +22,23 @@ class TweetTest < ActiveSupport::TestCase
      tweet = create_tweet :content => "just referencing @somebody"
       assert ! tweet.reply?, "false positive on non-reply"
   end
+
+  def test_should_generate_header
+    tweet = new_tweet(:header => nil, :content => 'I was just thinking about this one thing')
+    assert_nil tweet.header
+    assert tweet.save
+    assert_not_nil tweet.header
+  end
   
 protected
 
   def create_tweet(options={})
-    Tweet.create({ :header => 'A name', :content => 'Some content', :user_id => users(:quentin).id, :feed_id => feeds(:one).id, :permalink => 'ok' }.merge(options))
+    t = new_tweet(options)
+    t.save
+    t
+  end
+
+  def new_tweet(options={})
+    Tweet.new({:header => 'some header', :content => 'Some content', :user_id => users(:quentin).id, :feed_id => feeds(:one).id, :permalink => 'ok' }.merge(options))
   end
 end
