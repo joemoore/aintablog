@@ -20,6 +20,7 @@ class QuoteTest < ActiveSupport::TestCase
     assert_nil q.header
     assert q.save
     assert_not_nil q.header
+    assert q.header.starts_with?("Quote: ")
   end
 
   protected

@@ -28,6 +28,7 @@ class TweetTest < ActiveSupport::TestCase
     assert_nil tweet.header
     assert tweet.save
     assert_not_nil tweet.header
+    assert tweet.header.starts_with?("Tweet: ")
   end
   
 protected

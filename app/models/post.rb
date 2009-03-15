@@ -74,11 +74,11 @@ class Post < ActiveRecord::Base
   end
 
   def generate_header
-    return if self.header
+    return unless self.header.blank?
     words = self.content.split(' ')[0..5]
     title = words[0..4].join(' ')
     title << '...' unless title.ends_with?('.')  || words.length < 6
-    self.header = title
+    self.header = "#{self.class.name}: #{title}"
   end
 
   private

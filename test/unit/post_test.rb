@@ -80,11 +80,11 @@ really a problem?
   def test_generate_header
     post = new_post(:header => nil, :content => 'one two three four five six seven eight nine ten')
     post.generate_header
-    assert_equal 'one two three four five...', post.header
+    assert_equal 'Post: one two three four five...', post.header
     post.content = 'one two'
     post.header = nil
     post.generate_header
-    assert_equal 'one two', post.header
+    assert_equal 'Post: one two', post.header
     post.header = 'do not overwrite'
     post.generate_header
     assert_equal 'do not overwrite', post.header
