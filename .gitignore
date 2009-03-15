@@ -11,6 +11,7 @@ config/defensio.yml
 ./**/.DS_Store
 Capfile
 *.tmproj
+.idea/
 .idea/**
 public/cache
 public/cache/**
