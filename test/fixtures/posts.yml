@@ -46,6 +46,7 @@ snippet:
 
 tweet:
   permalink: tweet_1
+  header: now you know
   content: now you know more about me
   type: Tweet
   user: quentin
