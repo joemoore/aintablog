@@ -1,15 +1,16 @@
 <h3 class="entry-title"><%= spanned_link post.header, post.cite %></h3>
 
-<%= render :partial => 'posts/date', :locals => {:post => post}%>
+<%= render :partial => 'posts/date', :locals => {:post => post} %>
 
 <%= link_to image_tag(post.permalink), post.cite %>
 <small><%= post.header %></small>
 
 <div class="entry entry-content">
-<% cache(post.permalink) do -%>
-  <blockquote><%= clean_content_for(post) if post.content %></blockquote>
-<% end -%>
+  <% cache(post.permalink) do -%>
+    <blockquote><%= clean_content_for(post) if post.content %></blockquote>
+  <% end -%>
 </div>
 <cite>
-  &#x2010; Posted from <%= link_to 'flickr', post.cite %> 
+  &#x2010; Posted from <%= link_to 'flickr', post.cite %>
+  <%= render :partial => 'admin/posts/admin_links', :locals => {:post => post} %>
 </cite>

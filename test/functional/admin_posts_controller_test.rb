@@ -129,7 +129,7 @@ class AdminPostsControllerTest < ActionController::TestCase
     
     get :show, :id => posts(:one).id
     assert_response :success
-    assert_template 'admin/posts/show'
+    assert_template 'posts/show'
   end
 
   def test_should_get_edit

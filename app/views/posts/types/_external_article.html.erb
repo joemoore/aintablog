@@ -12,10 +12,7 @@
 <% if params[:action] == 'index' -%>
 
   <div class="meta">
-    <% if logged_in? -%>
-    <%= link_to 'Edit', edit_article_path(post) unless post.from_feed? %>
-    <%= link_to 'Destroy', admin_post_path(post), :method => :delete, :confirm => "Click OK to delete this post forever." %>
-    <% end %>
+    <%= render :partial => 'admin/posts/admin_links', :locals => {:post => post} %>
   </div>
 
   <% if post.from_feed? -%>
