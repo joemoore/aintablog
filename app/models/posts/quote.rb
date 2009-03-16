@@ -5,5 +5,7 @@ class Quote < Post
   has_permalink :content
   
   validates_presence_of :content
+
+  before_create :generate_header
   
 end

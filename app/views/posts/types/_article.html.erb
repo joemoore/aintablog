@@ -10,8 +10,9 @@
 
 <% if params[:action] == 'index' -%>
 
-  <div class="meta"> 
+  <div class="meta">
     <%= comments_link_for(post) if post.allow_comments? %>
+    <%= render :partial => 'admin/posts/admin_links', :locals => {:post => post} %>
   </div>
   
   <% if post.from_feed? -%>

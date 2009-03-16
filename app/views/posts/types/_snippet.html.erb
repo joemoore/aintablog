@@ -17,6 +17,7 @@
 
   <div class="meta"> 
     <%= comments_link_for(post) %>
+    <%= render :partial => 'admin/posts/admin_links', :locals => {:post => post} %>
   </div>
 
 <%- else -%>

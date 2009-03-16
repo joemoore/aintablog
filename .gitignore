@@ -4,6 +4,7 @@
 log/*
 tmp/*
 db/*.sqlite3
+db/schema.rb
 config/database.yml
 config/settings.yml
 config/defensio.yml

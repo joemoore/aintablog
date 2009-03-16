@@ -9,9 +9,11 @@ xml.rss :version => "2.0" do
         xml.title post.name
         xml.description case post
         when Snippet then "<pre>#{post.content}</pre>"
-        when Picture then 
+        when Picture then
           BlueCloth.new("<img src='#{post.permalink}'/>").to_html +  BlueCloth.new("<blockquote>#{post.content}</blockquote>").to_html
         when Article then BlueCloth.new(post.content).to_html
+        when Quote then
+          post.content + "<br/><cite>&#x2010; #{h post.cite}</cite>"          
         else
           post.content
         end

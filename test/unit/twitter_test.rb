@@ -28,16 +28,6 @@ class TwitterTest < ActiveSupport::TestCase
     end
   end
 
-  def test_should_map_twitter_feed_to_tweet
-    twitter = create_twitter :uri => "file://#{MOCK_ROOT}/twitter_feed.xml"
-    twitter.refresh!
-    tweet = Tweet.last
-    assert tweet.header.starts_with?("Tweet: ")
-    assert tweet.header.include?(tweet.content[0..10])
-    length = tweet.content.length
-    assert ! tweet.header.include?(tweet.content[length - 10, length])
-  end
-
 protected
 
   def create_twitter(options={})

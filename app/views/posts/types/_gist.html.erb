@@ -1,4 +1,4 @@
-<%= render :partial => 'posts/date', :locals => {:post => post}%>
+<%= render :partial => 'posts/date', :locals => {:post => post} %>
 
 <blockquote>
   <%= spanned_link h(post.header), post.permalink -%>
@@ -6,5 +6,6 @@
 </blockquote>
 
 <cite>
-&#x2010; Posted via <%= link_to 'GitHub', post.permalink %>
+  &#x2010; Posted via <%= link_to 'GitHub', post.permalink %>
+  <%= render :partial => 'admin/posts/admin_links', :locals => {:post => post} %>
 </cite>

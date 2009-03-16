@@ -2,6 +2,8 @@ class Tweet < Post
   
   validates_presence_of :content
   validate :check_if_reply
+
+  before_create :generate_header
   
   def check_if_reply
     return true if SITE_SETTINGS['import_twitter_replies']

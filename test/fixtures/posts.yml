@@ -48,6 +48,7 @@ snippet:
 
 tweet:
   permalink: tweet_1
+  header: now you know
   content: now you know more about me
   type: Tweet
   user: quentin
@@ -60,7 +61,8 @@ gist:
 
 quote:
   permalink: quote_1
-  content: that was rad dude
+  content: The three most dangerous words in the English language are 'assume,' 'imply,' and 'obvious'
+  content: The three most dangerous...
   type: Quote
   user: quentin
 

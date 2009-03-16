@@ -1,10 +1,11 @@
-<%= render :partial => 'posts/date', :locals => {:post => post}%>
+<h3 class="entry-title"><%= post.header %></h3>
+
+<%= render :partial => 'posts/date', :locals => {:post => post} %>
 
 <blockquote>
-  <%=h post.content -%>
+  <%= h post.content -%>
 </blockquote>
-<% unless post.cite.blank? -%>
-  <cite>
-    <% unless post.header.blank? -%>&#x2010; <%= spanned_link h(post.cite), post.header %><% else -%>&#x2010; <%=h post.cite %><% end -%>    
-  </cite>
-<% end -%>
+<cite>
+  &#x2010; <%= h post.cite %>
+  <%= render :partial => 'admin/posts/admin_links', :locals => {:post => post} %>
+</cite>
