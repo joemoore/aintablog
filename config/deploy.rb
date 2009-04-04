@@ -8,7 +8,7 @@ set :user, "josephm"
 set :branch, "40withegg"
 set :deploy_via, :copy
 
-set :keep_releases,       5
+set :keep_releases, 5
 
 
 # If you aren't deploying to /u/apps/#{application} on the target
