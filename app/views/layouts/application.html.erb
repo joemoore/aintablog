@@ -1,34 +1,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+        "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title><%= yield :title %><%= SITE_SETTINGS['site_title'] %></title>
-	<meta name="generator" content="TextMate http://macromates.com/">
-	<meta name="author" content="Pat Nakajima">
-	<meta name="viewport" content="width=674">
-	<%= stylesheet_link_tag 'application', 'article', 'comments', 'admin', :cache => 'all' %>
-	<%= javascript_include_tag 'prototype', 'effects', 'extensions', 'application', 'admin', :cache => 'all' %>
-	<%#= javascript_tag "window._token = '#{form_authenticity_token}'" %>
-	<%= feed_tag nil, :title => "All Posts (RSS)" %>
-	<%= feed_tag :articles %>
-	<%= feed_tag :snippets %>
-	<%= feed_tag :links %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><%= yield :title %><%= SITE_SETTINGS['site_title'] %></title>
+  <meta name="generator" content="TextMate http://macromates.com/">
+  <meta name="author" content="Pat Nakajima">
+  <meta name="viewport" content="width=674">
+  <%= stylesheet_link_tag 'application', 'article', 'comments', 'admin', :cache => 'all' %>
+  <%= javascript_include_tag 'prototype', 'effects', 'extensions', 'application', 'admin', :cache => 'all' %>
+  <%#= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+  <%= feed_tag nil, :title => "All Posts (RSS)" %>
+  <%= feed_tag :articles %>
+  <%= feed_tag :snippets %>
+  <%= feed_tag :links %>
 </head>
 <body>
-  <%= render :partial => 'shared/admin' if logged_in? %>
-  <div <%= %{class="admin"} if params[:action].match(/new|edit/) || params[:controller].match(/comments/) %> id="all">
-    <div id="header">
-      <%= yield :header -%>
-    </div>
-    <div id="content">
-      <%= yield -%>
-    </div>
-    <div id="footer">
-      <%= yield :footer -%>
-    </div>
-    <small id="credits">Powered by <a href="http://aintablog.com">aintablog</a></small>
+<%= render :partial => 'shared/admin' if logged_in? %>
+<div <%= %{class="admin"} if params[:action].match(/new|edit/) || params[:controller].match(/comments/) %> id="all">
+  <div id="header">
+    <%= yield :header -%>
   </div>
+  <div id="content">
+    <%= yield -%>
+  </div>
+  <%= render :partial => "shared/sidebar" %>
+  <div id="footer">
+    <%= yield :footer -%>
+  </div>
+  <small id="credits">Powered by <a href="http://aintablog.com">aintablog</a></small>
+</div>
 </body>
 </html>
