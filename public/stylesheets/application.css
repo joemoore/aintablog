@@ -7,10 +7,6 @@
   outline: none;
 }
 
-#sidebar ol, #sidebar ul {
-  list-style-type: none;
-}
-
 body {
   background: #fff url(../images/sunny_side_700_525_2.jpg) top right no-repeat scroll;
   text-align: center;
@@ -49,6 +45,11 @@ h1, h2, h3, h4, h5, h6 {
 
 ul, ol {
   font-size: 12px;
+	list-style-position: inside;
+}
+
+#sidebar ol, #sidebar ul {
+  list-style-type: none;
 }
 
 p {
