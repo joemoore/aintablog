@@ -53,6 +53,15 @@ ul, ol {
   margin-bottom: 1em;
 }
 
+#sidebar ol lh, #sidebar ul lh {
+  font-weight: bold;
+}
+
+#sidebar ol lh a, #sidebar ul lh a{
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 1em 0;
   font-size: 14px;
@@ -63,6 +72,22 @@ a {
   color: #0af;
   text-decoration: none;
   padding: 0.1em 0.2em;
+}
+
+a span.muni {
+  background: url(../images/m.png) center left no-repeat scroll;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+
+a span.mta {
+  background: url(../images/mt.png) center left no-repeat scroll;
+  padding-left: 41px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: bold;
 }
 
 a:hover {
@@ -305,11 +330,12 @@ input[type="submit"] {
   display: block;
   float: left;
   margin-right: 1em;
+  margin-left: 1.5em;
   padding-left: 37px;
   font-style: italic;
   vertical-align:middle;
   padding-top: 0.5em;
-  width: 36px;
+  width: 5em;
   height: 36px;
   background: url(/images/external_article.png) no-repeat;
 }

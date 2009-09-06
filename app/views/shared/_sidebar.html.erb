@@ -1,15 +1,17 @@
-<div id = 'sidebar'>
-  <%=image_tag('me.png', :width => 180, :height =>  240) %>
+<div id='sidebar'>
+  <%= image_tag('me.png', :width => 180, :height =>  240) %>
   <ol>
-    <lh><strong>About Me:</strong></lh>
-    <li>I am a San Francisco-based software developer, artist, fog-dweller, and husband.  Contact me at <em>joe @ [the name of this blog]</em>.</li>
+    <lh>ABOUT ME:</lh>
+    <li>Joe Moore is a San Francisco-based software developer, artist, fog-dweller, and husband. Contact me at
+      <strong><em>joe@[the name of this blog]</em></strong>.
+    </li>
   </ol>
 
-  <p><strong><%= link_to "MTA/MUNI Articles", mta_path %></strong></p>
 
+  <p><strong><%= link_to "My Battle with <span class='muni'>uni/</span><span class='mta'>A</span>", mta_path %></strong>
 
   <ol>
-    <lh><strong>Sections:</strong></lh>
+    <lh>SECTIONS:</lh>
     <li><%= link_to "Articles by me", articles_path %></li>
     <li><%= link_to "Reblogged by me", external_articles_path %></li>
     <li><%= link_to "Tweets", tweets_path %></li>
@@ -17,4 +19,17 @@
     <li><%= link_to "Quotes", quotes_path %></li>
     <li><%= link_to "Code Snippets", snippets_path %></li>
   </ol>
+
+  <ol>
+    <lh>WEB PRESENCE:</lh>
+    <li>Twitter: <%= link_to "@joe_moore",  'http://twitter.com/joe_moore', :target => '_blank' %></li>
+    <li>Facebook: <%= link_to "joemoore1",  'http://www.facebook.com/joemoore1', :target => '_blank' %></li>
+    <li>Flickr: <%= link_to "joe_moore",    'http://flickr.com/photos/joe_moore', :target => '_blank' %></li>
+    <li>YouTube: <%= link_to "40withegg",   'http://www.youtube.com/40withegg', :target => '_blank' %></li>
+    <li>YouTube: <%= link_to "bunktrudy",   'http://www.youtube.com/bunktrudy', :target => '_blank' %></li>
+  </ol>
+
+  <div>
+    <script language="javascript" src="http://www.zazzle.com/api/zp/zpanel?zp=117030467715944796"></script>
+  </div>
 </div>
