@@ -50,6 +50,7 @@ ul, ol {
 
 #sidebar ol, #sidebar ul {
   list-style-type: none;
+  margin-bottom: 1em;
 }
 
 p {

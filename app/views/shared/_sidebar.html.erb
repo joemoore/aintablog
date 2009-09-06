@@ -1,16 +1,20 @@
 <div id = 'sidebar'>
   <%=image_tag('me.png', :width => 180, :height =>  240) %>
-  <p>about me...</p>
-   
+  <ol>
+    <lh><strong>About Me:</strong></lh>
+    <li>I am a San Francisco-based software developer, artist, fog-dweller, and husband.  Contact me at <em>joe @ [the name of this blog]</em>.</li>
+  </ol>
+
   <p><strong><%= link_to "MTA/MUNI Articles", mta_path %></strong></p>
 
+
   <ol>
+    <lh><strong>Sections:</strong></lh>
     <li><%= link_to "Articles by me", articles_path %></li>
     <li><%= link_to "Reblogged by me", external_articles_path %></li>
+    <li><%= link_to "Tweets", tweets_path %></li>
     <li><%= link_to "Links", links_path %></li>
     <li><%= link_to "Quotes", quotes_path %></li>
     <li><%= link_to "Code Snippets", snippets_path %></li>
-    <li>Contact: joe @ [the title of this blog]</li>
   </ol>
-
 </div>
