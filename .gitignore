@@ -1,4 +1,5 @@
 *~
+REVISION
 log/*
 tmp/*
 db/*.sqlite3
@@ -9,6 +10,15 @@ Capfile
 .idea/
 .idea/**
 public/cache
+public/2*
 public/cache/**
+public/articles/**
+public/assets
+public/external_articles/**
+public/feed/**
+public/index.html
+public/posts.rss
+public/system
 public/javascripts/all.js
 public/stylesheets/all.css
+public/*.rss

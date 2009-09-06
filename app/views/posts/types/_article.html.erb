@@ -8,7 +8,7 @@
 <% end -%>
 </div>
 
-<% if params[:action] == 'index' -%>
+<% if %w(index mta).include?(params[:action]) -%>
 
   <div class="meta">
     <%= comments_link_for(post) if post.allow_comments? %>
@@ -21,7 +21,7 @@
 
 <% else -%>
 
-<%= render :partial => "/posts/types/comments.html.erb" if post.allow_comments? %>
+  <%= render :partial => "/posts/types/comments.html.erb" if post.allow_comments? %>
 
 <small><%= link_to 'Click here to go home', root_path %></small>
 

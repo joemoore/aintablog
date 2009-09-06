@@ -6,6 +6,7 @@ xml.rss :version => "2.0" do
     xml.link posts_url(:format => :rss)
     @posts.each do |post|
       xml.item do
+       unless post.is_a?(Tweet)
         xml.title post.name
         xml.description case post
         when Snippet then "<pre>#{post.content}</pre>"
@@ -15,12 +16,13 @@ xml.rss :version => "2.0" do
         when Quote then
           post.content + "<br/><cite>&#x2010; #{h post.cite}</cite>"          
         else
-          post.content
+          post.content unless post.is_a?(Tweet)
         end
         xml.author post.user.try(:name) || post.feed.try(:title)
         xml.guid post.from_feed? ? post.permalink : url_for(post) rescue url_for(post)
         xml.pubDate post.created_at.to_s(:rfc822)
         xml.link feed_url_for(post)
+      end
       end
     end
   end

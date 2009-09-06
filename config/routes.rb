@@ -3,7 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts
   map.resources :users
   map.resource  :session
-  map.resources :articles, :has_many => :comments
+  map.resources :articles, :has_many => :comments, :collection => {:mta => :get}
+  map.mta '/mta', :controller => 'articles', :action => 'mta'
   map.resources :external_articles
   map.resources :quotes
   map.resources :pictures

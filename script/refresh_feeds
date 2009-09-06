@@ -3,7 +3,7 @@ runner = File.dirname(__FILE__) + "/runner"
 
 begin
     if system("RAILS_ENV=production #{runner} 'Feed.refresh_all!'")
-        %w(index post feed article external_article gist link picture quote snippet tweet).each do |file|
+        %w(index mta post feed article external_article gist link picture quote snippet tweet).each do |file|
           system "rm #{File.dirname(__FILE__)}/../public/#{file}.html"
           system "rm #{File.dirname(__FILE__)}/../public/#{file}s.html"
           system "rm #{File.dirname(__FILE__)}/../public/#{file}.rss"
