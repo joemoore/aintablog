@@ -169,6 +169,13 @@ class PostsControllerTest < ActionController::TestCase
     end
   end
 
+  test "rss should not have tweets" do
+    get :index, :format => 'rss'
+    body = @response.body
+    assert body.include?(posts(:one).permalink)
+    assert !body.include?(posts(:tweet).permalink)
+  end
+
   private
   
   def posts_stub
