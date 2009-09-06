@@ -2,26 +2,27 @@ class PostsController < ApplicationController
 
   # Used by feeds_controller to calculate cache expirations.
   @@subtypes = [:articles, :external_articles, :links, :pictures, :quotes, :snippets, :tweets, :gists]
-  cattr_reader :subtypes 
-  
+  cattr_reader :subtypes
+
   before_filter :redirect_to_admin, :if => :logged_in?
-  
+
   caches_page :index
   caches_page :show
-  
+
   # GET /posts
   # GET /posts.xml
   def index
     last_modified = post_repo.last_modified
 
-    if fresh_when \
-      :etag => (post_repo.etag || 'empty'),
-      :last_modified => last_modified ? last_modified.utc : nil
+    if fresh_when :etag => (post_repo.etag || 'empty'), :last_modified => last_modified ? last_modified.utc : nil
       return
     end
-    
-    @posts = post_repo.paginate_index(:page => params[:page])
-    
+
+    pagination = params[:posts_type] ?
+                    {:page => params[:page], :conditions => {:type => params[:posts_type].singularize}} :
+                    {:page => params[:page]}
+    @posts = post_repo.paginate_index(pagination)
+
     respond_to do |format|
       format.html { render :template => 'posts/index.html.erb' }
       format.rss  { render :template => 'posts/index.rss.builder' }
@@ -33,28 +34,28 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     redirect_to root_path and return unless current_post.type.match(/Article|Snippet/)
-    
+
     if fresh_when(:etag => current_post.updated_at.to_s.hash, :last_modified => current_post.updated_at.utc)
       return
     end
-    
+
     @comment = flash[:comment] || current_post.comments.build
     respond_to do |format|
       format.html { render :template => 'posts/show.html.erb' }
       format.xml  { render :xml => current_post }
     end
   end
-  
+
   private
-  
+
   def current_post
     @post ||= Post.find_by_permalink(params[:id], :include => :comments) || Post.find(params[:id])
   end
-  
+
   def post_type
     :posts
   end
-  
+
   def redirect_to_admin
     redirect_to admin_root_path + request.path
   end

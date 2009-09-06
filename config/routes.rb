@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :feeds, :collection => { :refresh => :post }  
+  map.resources :feeds, :collection => { :refresh => :post }
   map.resources :posts
   map.resources :users
   map.resource  :session
@@ -12,8 +12,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tweets
   map.resources :links
   map.resources :snippets, :has_many => :comments
+
+  %w(posts articles external_articles quotes pictures gists tweets links snippets).each do |post_type|
+    map.connect "/#{post_type}/page/:page", :controller => post_type
+    map.connect "/admin/#{post_type}/page/:page", :controller => "admin/#{post_type}"
+  end
+
   map.resources :comments, :member => { :report => :put }, :collection => { :spammy => :delete }
-  
+
   map.namespace(:admin) do |admin|
     admin.root :controller => 'posts'
     admin.resources :posts
@@ -25,10 +31,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :snippets, :has_many => :comments
     admin.resources :comments, :member => { :report => :put }
   end
-  
-  # allow for page links like "/posts/page/2"
-  map.connect '/:posts_type/page/:page', :controller => 'posts'
-  map.connect '/admin/:posts_type/page/:page', :controller => 'admin/posts'
+
 
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'sessions', :action => 'new'
