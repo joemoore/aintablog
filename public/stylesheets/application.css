@@ -55,6 +55,10 @@ ul, ol {
   line-height: 1.4em;
 }
 
+#store {
+  margin: 20px 20px 10px 20px;
+}
+
 #sidebar ol, #sidebar ul {
   list-style-type: none;
   margin-bottom: 1em;
