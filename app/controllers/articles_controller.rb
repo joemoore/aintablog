@@ -14,12 +14,10 @@ class ArticlesController < PostsController
       return
     end
 
-    #@posts = post_repo.paginate_index({:all, :conditions => "content LIKE '%MTA%'", :order => "updated_ at DESC", :page => params[:page]})
     @posts = post_repo.all(:conditions => "content LIKE '%MTA%'", :order => "updated_at DESC", :include => [:comments, :feed]).paginate(:page => params[:page])
-    #@posts = post_repo.all(:conditions => "content LIKE '%MTA%'", :order => "updated_at DESC", :include => [:comments, :feed])
 
     respond_to do |format|
-      format.html { render :template => 'posts/index.html.erb' }
+      format.html { render :template => 'posts/mta.html.erb' }
       format.rss  { render :template => 'posts/index.rss.builder' }
       format.xml  { render :xml => @posts }
     end

@@ -1,0 +1,20 @@
+<% content_for :title do -%>Welcome to
+<% end -%>
+<% content_for :header do -%>
+  <h1><a href="<%= root_path %>"><span><%= SITE_SETTINGS['site_name'] -%></span></a></h1>
+  <h2><%= SITE_SETTINGS['site_tagline'] -%></h2>
+<% end -%>
+
+<div id="posts">
+  <div id='summary'>
+    In August 2007 I decided to take my frustration with San Francisco Muni light-rail public by
+    creating t-shirts parodying the system. My shirts quickly came under fire from the New York MTA (yes, New York!)
+    resulting in t-shirt printer CafePress.com halted production of my products. Since then my story has been picked up
+    by blogs, newsgroups, discussion boards, fellow targets of the NYMTA, and even local newspapers. Read all about it!
+  </div>
+  <%= render :partial => "posts/post", :collection => @posts %>
+</div>
+
+<%= '<p>There were no posts found.</p>' if @posts.empty? %>
+
+<%= will_paginate(@posts, :posts_type => @post_type) %>

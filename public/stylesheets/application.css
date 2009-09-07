@@ -48,6 +48,13 @@ ul, ol {
 	list-style-position: inside;
 }
 
+#summary {
+  padding: 5px;
+  font-style: italic;
+  background-color: lightyellow;
+  line-height: 1.4em;
+}
+
 #sidebar ol, #sidebar ul {
   list-style-type: none;
   margin-bottom: 1em;
@@ -267,6 +274,7 @@ input[type="submit"] {
 
 .pagination {
   font-size: 12px;
+  margin-top: 1.2em;
 }
 
 .pagination > * {
