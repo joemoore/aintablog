@@ -35,7 +35,7 @@ class Feed < ActiveRecord::Base
   
   def fetch_feed
     with_indifferent_io do |io|
-      FeedNormalizer::FeedNormalizer.parse(io)
+      FeedNormalizer::FeedNormalizer.parse(io, :force_parser => FeedNormalizer::SimpleRssParser)
     end
   end
   

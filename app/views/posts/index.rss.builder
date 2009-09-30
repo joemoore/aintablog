@@ -6,10 +6,9 @@ xml.rss :version => "2.0" do
     xml.link posts_url(:format => :rss)
     @posts.each do |post|
       xml.item do
-        next if post.is_a(Tweet)
+        next if post.is_a?(Tweet)
         xml.title post.name
-        xml.description
-        case post
+        xml.description case post
           when Snippet then
             "<pre>#{post.content}</pre>"
           when Picture then
