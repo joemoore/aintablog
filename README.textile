@@ -33,4 +33,4 @@ h3. TODO
 * -Page titles!-
 * -Page caching-
 * More control over posts (publish_at, -commentable?-) 
-* Something else!
+* I just love making Hudson build!
