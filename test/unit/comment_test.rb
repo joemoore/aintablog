@@ -29,6 +29,20 @@ class CommentTest < ActiveSupport::TestCase
     end
   end
   
+  def test_should_not_create_spammy_comments
+    assert_no_difference 'Comment.count' do
+      comment = create_comment(:spam => true)
+      assert !comment.valid?, comment.to_yaml
+      assert_not_nil comment.errors.on(:spam)
+    end    
+  end
+
+  def test_should_create_non_spammy_comment
+    assert_difference 'Comment.count' do
+      comment = create_comment(:spam => false)
+    end
+  end
+
 protected
 
   def create_comment(options={})
