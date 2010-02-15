@@ -1,4 +1,6 @@
-module Defensio::ActsAs::ClassMethods
+module Defensio 
+  module ActsAs
+    module ClassMethods
   def acts_as_defensio(type, options={})
     include InstanceMethods
     
@@ -55,8 +57,7 @@ module Defensio::ActsAs::ClassMethods
       # save(false) unless self.spam
     end
   end
-  
-  
-  
+end
+end  
 end
 ActiveRecord::Base.extend Defensio::ActsAs::ClassMethods
