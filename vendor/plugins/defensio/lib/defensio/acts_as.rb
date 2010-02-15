@@ -68,7 +68,7 @@ module Defensio
             after_create :announce_article!
           end
         when :comment
-          after_create :audit_comment
+          before_create :audit_comment
         end
         
         @defensio_type = type
@@ -148,7 +148,7 @@ module Defensio
           self.signature = response.signature
           self.spam      = response.spam
           self.spaminess = response.spaminess
-          save(false)
+          # save(false)
         end
       end
       
