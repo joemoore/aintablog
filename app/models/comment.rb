@@ -12,8 +12,8 @@ class Comment < ActiveRecord::Base
   validates_presence_of :name, :email, :body
   validate :validate_not_spam
   
-  named_scope :spammy, :conditions => 'spam = 1'
-  named_scope :hammy, :conditions => 'spam = 0'
+  named_scope :spammy, :conditions => 'spam = 1', :order => 'created_at DESC'
+  named_scope :hammy, :conditions => 'spam = 0', :order => 'created_at DESC'
 
   def texilized_body
     text = body || ''
