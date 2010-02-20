@@ -68,7 +68,7 @@ module Defensio
             after_create :announce_article!
           end
         when :comment
-          before_create :audit_comment
+          before_validation_on_create :audit_comment
         end
         
         @defensio_type = type
