@@ -10,7 +10,7 @@ class PostTest < ActiveSupport::TestCase
   
   def test_should_require_source
     # fail so I can test Hudson Pulse.
-    flunk
+    sleep 300
     post = new_post(:user => nil, :feed => nil)
     assert ! post.valid?
     assert_not_nil post.errors.on(:source)
