@@ -44,5 +44,5 @@ ActionController::Routing::Routes.draw do |map|
   map.mephisto_feed_format 'feed.:format', :controller => "posts"
   map.mephisto_atom_xml 'feed/atom.xml', :controller => "posts", :format => 'rss'
   
-  map.root :controller => 'posts'
+  map.root :controller => 'articles'
 end
